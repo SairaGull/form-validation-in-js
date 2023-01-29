@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"/>
+    <title>Document</title>
+    <style>
+        .bgcolor{
+            background-color:rgba(142, 186, 47, 0.991);
+        }
+        .rowcolor{
+            background-color: rgba(241, 246, 241, 0.234);
+            
+        }
+        /* .btnwidth{
+            width: 145px;
+            
+        } */
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class=" form " onsubmit="return validation()">
+            
+           <div class="col-md-8  offset-2 bgcolor">
+            <h1 class="ml-5">Step 1: Your Details</h1>
+            
+            
+           
+
+            <div class="row from-group  ">
+                <div class="col-md-10 offset-1 rowcolor border rounded mt-1">
+                   
+                    <div class="row border  ">
+                        <div class="col-md-3   ">
+                            <label  class="col-sm-2 col-form-label col-form-label-sm p-3">Name</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-sm mt-2 font-italic"  placeholder="First & last name" id="user">
+                            <div class="text-danger font-weight-bold" id="error1"></div>
+                            
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 from-group ">
+                <div class="col-md-10 offset-1 rowcolor border rounded">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            <label  class="col-sm-2 col-form-label col-form-label-sm p-3">Email</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-sm mt-2 font-italic"  placeholder="example@domain.com" id="email">
+                            <div class="text-danger font-weight-bold" id="error2"></div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1  from-group">
+                <div class="col-md-10 offset-1 rowcolor border rounded">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            <label  class="col-sm-12 col-form-label col-form-label-sm p-3">Phone</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-sm mt-2 font-italic"  placeholder="Eg.+447500000000" id="phone">
+                            <div class="text-danger font-weight-bold" id="error3"></div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="col-md-8  offset-2 bgcolor ">
+            <h1 class="ml-5">Step 2:Delivery address</h1>
+            
+           
+
+            <div class="row  from-group ">
+                <div class="col-md-10 offset-1 rowcolor border rounded mt-2">
+                   
+                    <div class="row border  ">
+                        <div class="col-md-3   ">
+                            <label  class="col-sm-12 col-form-label col-form-label-sm p-5">Address</label>
+                        </div>
+                        <div class="col-md-6">
+                            <textarea class="form-control mt-2 p-3" id="text" rows="3"></textarea>
+                            <div class="text-danger font-weight-bold" id="error4"></div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 from-group ">
+                <div class="col-md-10 offset-1 rowcolor border rounded">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label  class="col-sm-12 col-form-label col-form-label-sm p-3">Post code
+
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control form-control-sm mt-2"  id="code" >
+                            <div class="text-danger font-weight-bold" id="error5"></div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 from-group ">
+                <div class="col-md-10 offset-1 rowcolor border rounded">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            <label  class="col-sm-12 col-form-label col-form-label-sm p-3">Country</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-sm mt-2"   id="country">
+                            <div class="text-danger font-weight-bold" id="error6"></div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8  offset-2 bgcolor">
+            
+           
+            
+           
+
+            <div class="row  from-group ">
+                <div class="col-md-10 offset-1 rowcolor border rounded mt-2">
+                   
+                    <div class="row border  ">
+                        <div class="col-md-12   ">
+                            <label  class="col-sm-12 col-form-label col-form-label-sm p-3">Card type</label>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="custom-control custom-radio custom-control-inline ml-3">
+                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+
+                                
+                                <label class="custom-control-label" for="customRadioInline1">VISA</label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline ml-5">
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline2">AmEx</label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline ml-5">
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline2">Mastercard</label>
+                              </div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 from-group ">
+                <div class="col-md-10 offset-1 rowcolor border rounded">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label  class="col-sm-12 col-form-label col-form-label-sm p-3">Card number
+
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-sm mt-2" id="cardnumber" >
+                            <div class="text-danger font-weight-bold" id="error7"></div>
+
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 from-group ">
+                <div class="col-md-10 offset-1 rowcolor border rounded">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            <label  class="col-sm-12 col-form-label col-form-label-sm p-3">Security code
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-sm mt-2" id="security"  >
+                            <div class="text-danger font-weight-bold" id="error8"></div>
+
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 from-group ">
+                <div class="col-md-10 offset-1 rowcolor border rounded">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            <label  class="col-sm-12 col-form-label col-form-label-sm p-3 ">Name on card
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" placeholder="Exact name as on the card " class="form-control form-control-sm mt-2 font-italic"  id="cardname" >
+                            <div class="text-danger font-weight-bold " id="error9"></div>
+
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row from-group">
+                <div class="col-md-4 offset-4 "><button type="button" class="btn btn-secondary   w-50 text-white rounded-pill p-2 mt-2 mb-4   font-weight-bolder " id="sub" onclick=" one() ; savee()">BUY IT!</button></div>
+            </div>
+            
+        
+                
+           
+            
+
+           
+    </div>
+    
+</body>
+
+<script type="text/javascript">
+
+    // var btn=document.getElementById("sub").addEventListener("click" ,
+    function one(){
+        var name=document.getElementById("user").value;
+
+        if(name==="" ){
+            document.getElementById("error1").innerHTML="Please Enter the user name";
+            user.style.border="1px solid red";
+        }
+        else{
+            document.getElementById("error1").style.display="none"
+            user.style.border="1px solid green";
+
+        }
+
+        var mail=document.getElementById("email").value;
+        var pattren=/^[A-Za-z._]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/
+
+        if(pattren.test(email)===false){
+
+        // if(mail===""){
+
+            document.getElementById("error2").innerHTML="Please Enter the valid  Email";
+            email.style.border="1px solid red";
+        }
+        else{
+            document.getElementById("error2").style.display="none"
+           email.style.border="1px solid green";
+
+        }
+        var ph=document.getElementById("phone").value;
+
+        if(ph==="" ){
+            document.getElementById("error3").innerHTML="Please Enter the phone number";
+            phone.style.border="1px solid red";
+        }
+        else{
+            document.getElementById("error3").style.display="none"
+           phone.style.border="1px solid green";
+
+        }
+        var Address=document.getElementById("text").value;
+
+        if(Address===""){
+            document.getElementById("error4").innerHTML="Please Enter the Address";
+            text.style.border="1px solid red";
+        }
+        else{
+            document.getElementById("error4").style.display="none"
+           text.style.border="1px solid green";
+
+        }
+        var postCode=document.getElementById("code").value;
+
+        if(postCode===""){
+            document.getElementById("error5").innerHTML="Please Enter the Post Code";
+            code.style.border="1px solid red";
+        }
+        else{
+            document.getElementById("error5").style.display="none"
+           code.style.border="1px solid green";
+
+        }
+        var countryy=document.getElementById("country").value;
+
+        if(countryy===""){
+            document.getElementById("error6").innerHTML="Please Enter the Country name";
+            country.style.border="1px solid red";
+        }
+        else{
+            document.getElementById("error6").style.display="none"
+           country.style.border="1px solid green";
+
+        }
+        var cardNumber=document.getElementById("cardnumber").value;
+
+        if(cardNumber===""){
+            document.getElementById("error7").innerHTML="Please Enter the Card Number";
+            cardnumber.style.border="1px solid red";
+        }
+        else{
+            document.getElementById("error7").style.display="none"
+           cardnumber.style.border="1px solid green";
+
+        }
+
+        var securityCode=document.getElementById("security").value;
+
+        if(securityCode===""){
+            document.getElementById("error8").innerHTML="Please Enter the security code";
+            security.style.border="1px solid red";
+        }
+        else{
+            document.getElementById("error8").style.display="none"
+           security.style.border="1px solid green";
+
+        }
+        var cardName=document.getElementById("cardname").value;
+
+        if(cardName===""){
+            document.getElementById("error9").innerHTML="Please Enter Card name";
+            cardname.style.border="1px solid red";
+        }
+        else{
+            document.getElementById("error9").style.display="none"
+           cardname.style.border="1px solid green";
+
+        }
+
+
+    }
+    
+
+
+    
+</script>
+</html>
